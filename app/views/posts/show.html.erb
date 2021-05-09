@@ -1,10 +1,11 @@
 
-
-<% @post.each do |post| %>
-<% if user_signed_in? %>
-<p> <strong> User :</strong> <%= User.find(post.user_id).username %> </p> 
+<div class= "post list"> 
+  <% @post.each do |post| %>
+  <div class="post single">
+   <% if user_signed_in? %>
+    <p> <strong> User:</strong> <%= User.find(post.user_id).username %> </p> 
+   <% end %>
+   <p><strong>Body:</strong> <%= post.body %></p>
+  </div>
 <% end %>
-  <p><strong>Body</strong> <%= post.body %></p>
-
-<% end %>
-
+</div>

@@ -1,3 +1,25 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.post.list {
+    margin: auto; 
+    width: 50%; 
+}
+
+.post.single {
+    width: 100%; 
+    margin : 2px; 
+    border: solid; 
+    border-width: 2px;
+    border-color : black;
+}
+
+.post.single p { 
+    padding: 5%; 
+    padding-bottom: 2%; 
+    padding-top: 2%; 
+    width: 75%;
+    height: 100%; 
+    margin: auto; 
+}
