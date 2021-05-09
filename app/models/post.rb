@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-   belongs_to :users 
+   belongs_to :user
 
-   validates :author_id, presence: true
+   validates :user_id, presence: true
    validates :body, presence: true 
 end

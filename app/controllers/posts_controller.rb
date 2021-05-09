@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+
   def show 
    @post = Post.all
   end
@@ -9,11 +10,12 @@ class PostsController < ApplicationController
   end
 
   def create
-   @post = current_user.tweets.build(user_params)
+   @post = current_user.posts.build(post_params)
 
-   if @post.save 
+   if @post.save
      redirect_to root_path 
    else
+     flash[:notice] = @post.errors.full_messages
      render :new 
    end
   end
@@ -21,6 +23,6 @@ class PostsController < ApplicationController
   private
 
   def post_params 
-   params.require(:post).permit(:author_id, :body)
+   params.require(:post).permit(:body)
   end
 end

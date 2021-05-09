@@ -1,6 +1,5 @@
 
 <%= form_with model: @post, method: :post do |form| %> 
    Body: <%= form.text_field :body %>
-   <%= form.hidden_field(:post, :author_id) %>
   <%= form.submit %>
 <% end %>
